@@ -1,2 +1,4 @@
 # Balancing_selection
-PhD projects
+
+
+Data and analysis from my PhD project on balancing selection.
