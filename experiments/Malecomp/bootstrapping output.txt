@@ -1,0 +1,33 @@
+> MC.allele
+Parametric bootstrap test; time: 1949.88 sec; samples: 1000 extremes: 561;
+Requested samples: 1000 Used samples: 999 Extremes: 561
+large : winner ~ Allele + Genotype + (1 | Line) + (1 | Block) + (1 | 
+    Round)
+small : winner ~ Genotype + (1 | Line) + (1 | Block) + (1 | Round)
+         stat df p.value
+LRT    0.4871  1  0.4852
+PBtest 0.4871     0.5620
+
+Parametric bootstrap test; time: 2049.17 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 993 Extremes: 0
+large : winner ~ Allele + Genotype + (1 | Line) + (1 | Block) + (1 | 
+    Round)
+small : winner ~ Allele + (1 | Line) + (1 | Block) + (1 | Round)
+         stat df   p.value    
+LRT    17.801  1 2.453e-05 ***
+PBtest 17.801     0.001006 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> MC.inter
+Parametric bootstrap test; time: 3414.68 sec; samples: 1000 extremes: 57;
+Requested samples: 1000 Used samples: 995 Extremes: 57
+large : winner ~ Allele * Genotype + (1 | Line) + (1 | Block) + (1 | 
+    Round)
+small : winner ~ Allele + Genotype + (1 | Line) + (1 | Block) + (1 | 
+    Round)
+         stat df p.value  
+LRT    3.5202  1 0.06062 .
+PBtest 3.5202    0.05823 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
