@@ -1,0 +1,105 @@
+PARAMETRIC BOOTSTRAPPING FOR DEVELOPMENT TIME
+
+> DevT.A
+Parametric bootstrap test; time: 60.59 sec; samples: 1000 extremes: 655;
+large : log(eclosion_date) ~ allele + sex * chro + (1 | vial) + (1 | 
+    lines)
+small : log(eclosion_date) ~ sex * chro + (1 | vial) + (1 | lines)
+         stat df p.value
+LRT    0.3612  1  0.5478
+PBtest 0.3612     0.6553
+
+> DevT.S
+Parametric bootstrap test; time: 61.45 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 999 Extremes: 0
+large : log(eclosion_date) ~ allele * chro + sex + (1 | vial) + (1 | 
+    lines)
+small : log(eclosion_date) ~ allele * chro + (1 | vial) + (1 | lines)
+         stat df p.value    
+LRT    98.692  1  <2e-16 ***
+PBtest 98.692      0.001 ***
+
+
+> DevT.C
+Parametric bootstrap test; time: 66.83 sec; samples: 1000 extremes: 2;
+Requested samples: 1000 Used samples: 998 Extremes: 2
+large : log(eclosion_date) ~ allele * sex + chro + (1 | vial) + (1 | 
+    lines)
+small : log(eclosion_date) ~ allele * sex + (1 | vial) + (1 | lines)
+         stat df  p.value   
+LRT    9.2103  1 0.002407 **
+PBtest 9.2103    0.003003 **
+
+
+> DevT.AS
+Parametric bootstrap test; time: 67.51 sec; samples: 1000 extremes: 356;
+large : log(eclosion_date) ~ allele * sex + allele * chro + sex * chro + 
+    (1 | vial) + (1 | lines)
+small : log(eclosion_date) ~ allele * chro + sex * chro + (1 | vial) + 
+    (1 | lines)
+        stat df p.value
+LRT    0.906  1  0.3412
+PBtest 0.906     0.3566
+
+> DevT.AC
+Parametric bootstrap test; time: 67.27 sec; samples: 1000 extremes: 848;
+large : log(eclosion_date) ~ allele * sex + allele * chro + sex * chro + 
+    (1 | vial) + (1 | lines)
+small : log(eclosion_date) ~ allele * sex + sex * chro + (1 | vial) + 
+    (1 | lines)
+         stat df p.value
+LRT    0.0375  1  0.8465
+PBtest 0.0375     0.8482
+
+> DevT.SC
+Parametric bootstrap test; time: 65.81 sec; samples: 1000 extremes: 105;
+large : log(eclosion_date) ~ allele * sex + allele * chro + sex * chro + 
+    (1 | vial) + (1 | lines)
+small : log(eclosion_date) ~ allele * sex + allele * chro + (1 | vial) + 
+    (1 | lines)
+         stat df p.value
+LRT    2.5191  1  0.1125
+PBtest 2.5191     0.1059
+
+> DevT.3way
+Parametric bootstrap test; time: 66.72 sec; samples: 1000 extremes: 921;
+large : log(eclosion_date) ~ allele * sex * chro + (1 | vial) + (1 | 
+    lines)
+small : log(eclosion_date) ~ allele * sex + allele * chro + sex * chro + 
+    (1 | vial) + (1 | lines)
+         stat df p.value
+LRT    0.0122  1  0.9121
+PBtest 0.0122     0.9211
+
+AFFECT OF NUMBER OF FLIE FROM VIAL ON DEVELOPMENT TIME
+
+> VT.total.from.vial
+Parametric bootstrap test; time: 112.04 sec; samples: 1000 extremes: 465;
+large : log(eclosion_date) ~ total_from_vial + sex + (1 | vial) + (1 | 
+    lines) + (1 | chro)
+small : log(eclosion_date) ~ sex + (1 | vial) + (1 | lines) + (1 | chro)
+         stat df p.value
+LRT    0.5838  1  0.4448
+PBtest 0.5838     0.4655
+
+> VT.sex
+Parametric bootstrap test; time: 115.01 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 997 Extremes: 0
+large : log(eclosion_date) ~ total_from_vial + sex + (1 | vial) + (1 | 
+    lines) + (1 | chro)
+small : log(eclosion_date) ~ total_from_vial + (1 | vial) + (1 | lines) + 
+    (1 | chro)
+         stat df   p.value    
+LRT    98.887  1 < 2.2e-16 ***
+PBtest 98.887     0.001002 ** 
+
+> VT.inter
+Parametric bootstrap test; time: 125.27 sec; samples: 1000 extremes: 852;
+Requested samples: 1000 Used samples: 995 Extremes: 852
+large : log(eclosion_date) ~ total_from_vial * sex + (1 | vial) + (1 | 
+    lines) + (1 | chro)
+small : log(eclosion_date) ~ total_from_vial + sex + (1 | vial) + (1 | 
+    lines) + (1 | chro)
+         stat df p.value
+LRT    0.0368  1  0.8479
+PBtest 0.0368     0.8564

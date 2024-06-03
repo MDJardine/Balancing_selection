@@ -1,0 +1,78 @@
+> surv.total.allele.only <- coxph(Surv(day, censor) ~ allele, data=agefru)
+> surv.total.allele.only
+Call:
+coxph(formula = Surv(day, censor) ~ allele, data = agefru)
+
+            coef exp(coef) se(coef)      z    p
+alleleS -0.01839   0.98178  0.04938 -0.372 0.71
+
+Likelihood ratio test=0.14  on 1 df, p=0.7097
+n= 1916, number of events= 1659 
+> summary(surv.total.allele.only)
+Call:
+coxph(formula = Surv(day, censor) ~ allele, data = agefru)
+
+  n= 1916, number of events= 1659 
+
+            coef exp(coef) se(coef)      z Pr(>|z|)
+alleleS -0.01839   0.98178  0.04938 -0.372     0.71
+
+        exp(coef) exp(-coef) lower .95 upper .95
+alleleS    0.9818      1.019    0.8912     1.082
+
+Concordance= 0.496  (se = 0.007 )
+Likelihood ratio test= 0.14  on 1 df,   p=0.7
+Wald test            = 0.14  on 1 df,   p=0.7
+Score (logrank) test = 0.14  on 1 df,   p=0.7
+
+> anova(surv.total.allele.only)
+Analysis of Deviance Table
+ Cox model: response is Surv(day, censor)
+Terms added sequentially (first to last)
+
+       loglik  Chisq Df Pr(>|Chi|)
+NULL   -10695                     
+allele -10695 0.1386  1     0.7097
+
+
+> ## B flies
+> B.surv.allele.only <- coxph(Surv(day, censor) ~ allele, data=agefruB)
+> B.surv.allele.only
+Call:
+coxph(formula = Surv(day, censor) ~ allele, data = agefruB)
+
+          coef exp(coef) se(coef)     z      p
+alleleS 0.1318    1.1409   0.0672 1.961 0.0499
+
+Likelihood ratio test=3.85  on 1 df, p=0.04982
+n= 1029, number of events= 899 
+> summary(B.surv.allele.only)
+Call:
+coxph(formula = Surv(day, censor) ~ allele, data = agefruB)
+
+  n= 1029, number of events= 899 
+
+          coef exp(coef) se(coef)     z Pr(>|z|)  
+alleleS 0.1318    1.1409   0.0672 1.961   0.0499 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+        exp(coef) exp(-coef) lower .95 upper .95
+alleleS     1.141     0.8765         1     1.301
+
+Concordance= 0.522  (se = 0.01 )
+Likelihood ratio test= 3.85  on 1 df,   p=0.05
+Wald test            = 3.85  on 1 df,   p=0.05
+Score (logrank) test = 3.85  on 1 df,   p=0.05
+
+> anova(B.surv.allele.only)
+Analysis of Deviance Table
+ Cox model: response is Surv(day, censor)
+Terms added sequentially (first to last)
+
+        loglik  Chisq Df Pr(>|Chi|)  
+NULL   -5250.6                       
+allele -5248.7 3.8476  1    0.04982 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
