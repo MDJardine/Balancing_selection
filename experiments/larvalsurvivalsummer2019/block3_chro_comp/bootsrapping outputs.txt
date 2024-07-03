@@ -1,0 +1,120 @@
+Runs of parametric bootstrapping for larval survival
+
+##### TOTAL OFFSPRING 
+
+> total.off.allele
+Parametric bootstrap test; time: 30.65 sec; samples: 1000 extremes: 15;
+Requested samples: 1000 Used samples: 999 Extremes: 15
+large : log(total) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : log(total) ~ chro + (1 | allele:Line) + (1 | vial_line)
+         stat df  p.value   
+LRT    7.6379  1 0.005715 **
+PBtest 7.6379    0.016000 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> total.off.chro
+Parametric bootstrap test; time: 33.94 sec; samples: 1000 extremes: 0;
+large : log(total) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : log(total) ~ allele + (1 | allele:Line) + (1 | vial_line)
+         stat df   p.value    
+LRT    17.946  1 2.273e-05 ***
+PBtest 17.946     0.000999 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> total.off.inter
+Parametric bootstrap test; time: 31.78 sec; samples: 1000 extremes: 274;
+large : log(total) ~ allele * chro + (1 | allele:Line) + (1 | vial_line)
+small : log(total) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value
+LRT    1.2455  1  0.2644
+PBtest 1.2455     0.2747
+
+
+#### PROPORTION SURVIVING
+
+> pro.surv.allele
+Parametric bootstrap test; time: 33.67 sec; samples: 1000 extremes: 34;
+large : propsurv ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : propsurv ~ chro + (1 | allele:Line) + (1 | vial_line)
+         stat df  p.value   
+LRT    7.2397  1 0.007131 **
+PBtest 7.2397    0.034965 * 
+
+> pro.surv.chro
+Parametric bootstrap test; time: 34.80 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 998 Extremes: 0
+large : propsurv ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : propsurv ~ allele + (1 | allele:Line) + (1 | vial_line)
+         stat df   p.value    
+LRT    16.652  1 4.489e-05 ***
+PBtest 16.652     0.001001 ** 
+---
+
+> pro.surv.inter
+Parametric bootstrap test; time: 35.06 sec; samples: 1000 extremes: 842;
+large : propsurv ~ allele * chro + (1 | allele:Line) + +(1 | vial_line)
+small : propsurv ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value
+LRT    0.0429  1  0.8359
+PBtest 0.0429     0.8422
+
+#### SEX RATIO
+> SR.allele
+Parametric bootstrap test; time: 35.35 sec; samples: 1000 extremes: 809;
+large : sqrt(propmale) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : sqrt(propmale) ~ chro + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value
+LRT    0.0537  1  0.8168
+PBtest 0.0537     0.8092
+
+> SR.chro
+Parametric bootstrap test; time: 34.71 sec; samples: 1000 extremes: 157;
+large : sqrt(propmale) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+small : sqrt(propmale) ~ allele + +(1 | allele:Line) + (1 | vial_line)
+         stat df p.value
+LRT    2.1417  1  0.1433
+PBtest 2.1417     0.1578
+> SR.inter
+
+Parametric bootstrap test; time: 37.52 sec; samples: 1000 extremes: 96;
+large : sqrt(propmale) ~ allele * chro + (1 | allele:Line) + (1 | vial_line)
+small : sqrt(propmale) ~ allele + chro + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value  
+LRT    2.8908  1 0.08909 .
+PBtest 2.8908    0.09690 .
+
+
+#### RELATIVE SEX SURVIVAL
+
+> RSS.allele
+Parametric bootstrap test; time: 35.60 sec; samples: 1000 extremes: 347;
+large : log(Add_sexrelsurv) ~ allele + chro + (1 | allele:Line) + (1 | 
+    vial_line)
+small : log(Add_sexrelsurv) ~ chro + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value
+LRT    0.8032  1  0.3701
+PBtest 0.8032     0.3477
+
+> RSS.chro
+Parametric bootstrap test; time: 35.58 sec; samples: 1000 extremes: 96;
+large : log(Add_sexrelsurv) ~ allele + chro + (1 | allele:Line) + (1 | 
+    vial_line)
+small : log(Add_sexrelsurv) ~ allele + (1 | allele:Line) + (1 | vial_line)
+         stat df p.value  
+LRT    3.0197  1 0.08226 .
+PBtest 3.0197    0.09690 .
+---
+
+> RSS.inter
+Parametric bootstrap test; time: 34.02 sec; samples: 1000 extremes: 42;
+Requested samples: 1000 Used samples: 722 Extremes: 42
+large : log(Add_sexrelsurv) ~ allele * chro + (1 | allele:Line) + (1 | 
+    vial_line)
+small : log(Add_sexrelsurv) ~ allele + chro + (1 | allele:Line) + (1 | 
+    vial_line)
+        stat df p.value  
+LRT    3.704  1 0.05428 .
+PBtest 3.704    0.05947 .
+---

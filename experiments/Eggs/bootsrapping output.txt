@@ -1,0 +1,31 @@
+BOOTSTRAPPING OUTPUT FOR FECUNDITY
+
+ALLELE
+Parametric bootstrap test; time: 40.00 sec; samples: 1000 extremes: 188;
+large : sqrt(Predicted.count.) ~ allele + genotype + (1 | line) + (1 | 
+    block)
+small : sqrt(Predicted.count.) ~ genotype + (1 | line) + (1 | block)
+         stat df p.value
+LRT    2.6188  1  0.1056
+PBtest 2.6188     0.1888
+
+CHROMOSOME
+Parametric bootstrap test; time: 38.36 sec; samples: 1000 extremes: 40;
+large : sqrt(Predicted.count.) ~ allele + genotype + (1 | line) + (1 | 
+    block)
+small : sqrt(Predicted.count.) ~ allele + (1 | line) + (1 | block)
+         stat df p.value  
+LRT    4.4306  1 0.03530 *
+PBtest 4.4306    0.04096 *
+
+
+ALLELE X CHROMOSOME
+Parametric bootstrap test; time: 39.13 sec; samples: 1000 extremes: 30;
+Requested samples: 1000 Used samples: 999 Extremes: 30
+large : sqrt(Predicted.count.) ~ allele * genotype + (1 | line) + (1 | 
+    block)
+small : sqrt(Predicted.count.) ~ allele + genotype + (1 | line) + (1 | 
+    block)
+         stat df p.value  
+LRT    4.2864  1 0.03842 *
+PBtest 4.2864    0.03100 *

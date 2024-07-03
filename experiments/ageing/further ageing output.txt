@@ -1,0 +1,84 @@
+> ## all by sex
+> surv.total.sex.only <- coxph(Surv(day, censor) ~ sex, data=agefru)
+> surv.total.sex.only
+Call:
+coxph(formula = Surv(day, censor) ~ sex, data = agefru)
+
+         coef exp(coef) se(coef)      z        p
+sexM -0.20096   0.81795  0.04944 -4.064 4.82e-05
+
+Likelihood ratio test=16.59  on 1 df, p=4.65e-05
+n= 1916, number of events= 1659 
+> summary(surv.total.sex.only)
+Call:
+coxph(formula = Surv(day, censor) ~ sex, data = agefru)
+
+  n= 1916, number of events= 1659 
+
+         coef exp(coef) se(coef)      z Pr(>|z|)    
+sexM -0.20096   0.81795  0.04944 -4.064 4.82e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+     exp(coef) exp(-coef) lower .95 upper .95
+sexM    0.8179      1.223    0.7424    0.9012
+
+Concordance= 0.533  (se = 0.007 )
+Likelihood ratio test= 16.59  on 1 df,   p=5e-05
+Wald test            = 16.52  on 1 df,   p=5e-05
+Score (logrank) test = 16.57  on 1 df,   p=5e-05
+
+> anova(surv.total.sex.only)
+Analysis of Deviance Table
+ Cox model: response is Surv(day, censor)
+Terms added sequentially (first to last)
+
+     loglik  Chisq Df Pr(>|Chi|)    
+NULL -10695                         
+sex  -10687 16.586  1   4.65e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+
+> ## all by complement
+> surv.total.chro.only <- coxph(Surv(day, censor) ~ chro, data=agefru)
+> surv.total.chro.only
+Call:
+coxph(formula = Surv(day, censor) ~ chro, data = agefru)
+
+          coef exp(coef) se(coef)     z        p
+chroD -0.32904   0.71962  0.04978 -6.61 3.86e-11
+
+Likelihood ratio test=43.92  on 1 df, p=3.429e-11
+n= 1916, number of events= 1659 
+> summary(surv.total.chro.only)
+Call:
+coxph(formula = Surv(day, censor) ~ chro, data = agefru)
+
+  n= 1916, number of events= 1659 
+
+          coef exp(coef) se(coef)     z Pr(>|z|)    
+chroD -0.32904   0.71962  0.04978 -6.61 3.86e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+      exp(coef) exp(-coef) lower .95 upper .95
+chroD    0.7196       1.39    0.6527    0.7934
+
+Concordance= 0.548  (se = 0.007 )
+Likelihood ratio test= 43.92  on 1 df,   p=3e-11
+Wald test            = 43.69  on 1 df,   p=4e-11
+Score (logrank) test = 44.06  on 1 df,   p=3e-11
+
+> anova(surv.total.chro.only)
+Analysis of Deviance Table
+ Cox model: response is Surv(day, censor)
+Terms added sequentially (first to last)
+
+     loglik  Chisq Df Pr(>|Chi|)    
+NULL -10695                         
+chro -10673 43.915  1  3.429e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
