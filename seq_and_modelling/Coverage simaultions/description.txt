@@ -1,0 +1,12 @@
+As part of my PhD I was faced with the difficulty of how to plan my sequencing experiment. I had a defined budget based on my PhD funding plus some extra money from supervisors but this did not allow me to sequence all the samples I had with as much sequencing coverage as I would have liked to.  
+
+There were three considerations to take into account:  
+1) The number of flies to include in each sample 
+2) The number of time points 
+3) The average sequencing coverage (i.e. the mean number of reads covering each locus) 
+
+I built a few simulations to play around with these measures. This is where I really started to use loops in R which I had avoided at all costs before this. Now I can’t believe I even tried it without them. I eventually decided on using 9 timepoints with the aim of getting 40 reads covering per locus for a maple of 48 flies (96 chromosomes).  
+
+I’m planning to revisit this and I think it would make a great interactive model maybe through a shiny app or something as it may be useful for others. On the other hand, the rapid decline in sequencing costs means that experimental designs like this using pool sequencing maybe be obsolete in a few years.  
+
+ 
